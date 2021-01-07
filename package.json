@@ -9,8 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.5.3",
+  "dependencies": {},
+  "devDependencies": {
     "sass": "^1.32.2"
   }
 }

@@ -1,0 +1,42 @@
+
+@import './config.scss';
+
+*,*::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  font-family: var(--font);
+  background-color: var(--main-color);
+
+  &::after, &::before{
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 60%;
+  }
+
+  &::after {
+    top: 0;
+    left: 0;
+    background-image: url('../resorces/images/bg-pattern-top.svg');
+    background-position: top left;
+    transform: rotate(180deg);
+  }
+  &::before {
+    bottom: 0;
+    right: 0;
+    background-image: url('../resorces/images/bg-pattern-bottom.svg');
+  }
+
+  @include bp(desktop) {
+    &::after, &::before{
+      width: 50%;
+      height: 50%;
+    }
+  }
+}

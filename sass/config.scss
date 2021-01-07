@@ -1,0 +1,54 @@
+/* ----- mixins ----- */
+
+$points : (
+  small: 375px,
+  medium: 768px,
+  large: 1024px,
+  desktop: 1366px,
+  large-desktop: 1920px
+);
+
+@mixin bp($bp) {
+
+  @if map-has-key($points, $bp) {
+
+    @media screen and (min-width: map-get($points, $bp) ) {
+      @content;
+    }
+
+  } @else {
+
+    @media screen and (min-width: $bp ) {
+      @content;
+    }
+
+  }
+
+}
+
+
+/* ----- fonts ----- */
+@font-face {
+  font-family: 'Kumbh Sans';
+  src: url("../resorces/fonts/KumbhSans-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Kumbh Sans';
+  src: url("../resorces/fonts/KumbhSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ----- variables ----- */
+
+:root {
+  --main-color: hsl(185, 75%, 39%);
+  --dark-blue: hsl(229, 23%, 23%);
+  --gray-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%); 
+  --font: "Kumbh Sans", sans-serif;
+}
+
+

@@ -1,0 +1,61 @@
+/* ----- mixins ----- */
+/* ----- fonts ----- */
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("../resorces/fonts/KumbhSans-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("../resorces/fonts/KumbhSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+/* ----- variables ----- */
+:root {
+  --main-color: hsl(185, 75%, 39%);
+  --dark-blue: hsl(229, 23%, 23%);
+  --gray-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --font: "Kumbh Sans", sans-serif;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  font-family: var(--font);
+  background-color: var(--main-color);
+}
+body::after, body::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+}
+body::after {
+  top: 0;
+  left: 0;
+  background-image: url("../resorces/images/bg-pattern-top.svg");
+  background-position: top left;
+  transform: rotate(180deg);
+}
+body::before {
+  bottom: 0;
+  right: 0;
+  background-image: url("../resorces/images/bg-pattern-bottom.svg");
+}
+@media screen and (min-width: 1366px) {
+  body::after, body::before {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
