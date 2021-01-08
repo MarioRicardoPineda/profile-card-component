@@ -40,3 +40,94 @@ body {
     }
   }
 }
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  width: 80%;
+  height: 500px;
+  border-radius: 1.5rem;
+
+  background-color: var(--white);
+
+  @include bp(medium) { width: 500px; }
+}
+.card__hero {
+  position: relative;
+  flex-grow: 3;
+  background: url('../resorces/images/bg-pattern-card.svg') center center / cover;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.card__image {
+  position: absolute;
+  bottom: calc(96px / -2);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 5px solid var(--white);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  flex-grow: 2; 
+}
+
+.card__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+
+  .number { 
+    color: var(--light-gray); 
+    font-weight: 400; 
+    margin-left: 10px;
+  }
+
+}
+.card__contry { 
+  color: var(--light-gray);
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+
+  flex-grow: 1;
+  border-top: 1px solid #dddddd;
+  border-radius: 0 0 1.5rem 1.5rem;
+
+}
+
+.card__follow {
+  display: flex; 
+  flex-direction: column;
+
+  .card__number {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: .8rem;
+  }
+
+  .card__text { 
+    color: var(--light-gray); 
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: .8rem;
+  }
+}
